@@ -1,0 +1,46 @@
+/* Don't use smallcap titles */
+.reveal h1,
+.reveal h2 {
+    text-transform: none;
+}
+
+.reveal h4 {
+    margin-top: 1em;
+}
+
+/* Don't color table of contents links blue */
+#TOC a[href] {
+    color: var(--r-main-color);
+    text-decoration: none;
+}
+
+.font-smaller {
+    font-size: smaller;
+}
+
+.font-larger {
+    font-size: larger;
+}
+
+.font-smallerer {
+    font-size: 0.6em;
+}
+
+.citation {
+    font-size: smaller;
+    text-align: left;
+}
+
+/* used to reserve space for something on a slide that will be later
+   revealed */
+.placeholder {
+    visibility: hidden;
+}
+
+/* Centers items in containers */
+.v-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
