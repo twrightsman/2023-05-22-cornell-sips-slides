@@ -14,6 +14,12 @@
     text-decoration: none;
 }
 
+/* Use green text on black background for code */
+code {
+    color: rgb(0 170 0);
+    background: black;
+}
+
 .font-smaller {
     font-size: smaller;
 }
