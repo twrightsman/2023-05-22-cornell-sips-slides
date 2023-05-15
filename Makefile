@@ -1,4 +1,4 @@
-modules = introduction.html
+modules = introduction.html command-line-genomics.html
 
 slides: $(modules)
 
