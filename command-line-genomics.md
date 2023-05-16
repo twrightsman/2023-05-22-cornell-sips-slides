@@ -118,10 +118,6 @@ drwxr-xr-x 2 dcuser dcuser 4096 Nov 15  2017 untrimmed_fastq
 - What are some navigational shortcuts I can use to make my work more efficient?
 :::
 
-## Live demo
-
-Off to JupyterHub 🚀
-
 ## Exercise: Finding Hidden Directories
 
 There is a hidden directory within `shell_data`.
@@ -141,10 +137,6 @@ $ ls shell_data/.hidden
 youfoundit.txt
 ```
 
-## Live demo
-
-Off to JupyterHub 🚀
-
 ## Exercise: Navigating Practice
 
 Navigate to your home directory.
@@ -157,10 +149,6 @@ $ cd
 $ ls shell_data/untrimmed_fastq/
 SRR097977.fastq  SRR098026.fastq
 ```
-
-## Live demo
-
-Off to JupyterHub 🚀
 
 ## Exercise: Relative Path Resolution
 
@@ -176,10 +164,6 @@ Using the filesystem diagram below, if pwd displays `/Users/thing`, what will `l
 . . .
 
 4 is correct! `../backup` refers to `/Users/backup`.
-
-## Live demo
-
-Off to JupyterHub 🚀
 
 ## Key points
 
