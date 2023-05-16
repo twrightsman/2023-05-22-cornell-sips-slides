@@ -418,3 +418,45 @@ $ for filename in *_2019.txt
 - `for` loops are used for iteration.
 - `basename` gets rid of repetitive parts of names.
 :::
+
+# Writing Scripts and Working with Data
+
+## Objectives
+
+::: {.incremental}
+- Use the `nano` text editor to modify text files.
+- Write a basic shell script.
+- Use the `bash` command to execute a shell script.
+- Use `chmod` to make a script an executable program.
+:::
+
+## Exercise: Modifying README
+
+Open `README.txt` and add the date to the top of the file and save the file.
+
+. . .
+
+Use `nano README.txt` to open the file.
+Add today’s date and then use **Ctrl+X** followed by **y** and **Enter** to save.
+
+## Exercise: Notify when done
+
+We want the script to tell us when it’s done.
+
+1. Open `bad-reads-script.sh` and add the line `echo "Script
+   finished!"` after the `grep` command and save the file.
+2. Run the updated script.
+
+. . .
+
+```
+$ bash bad-reads-script.sh
+Script finished!
+```
+
+## Key points
+
+::: {.incremental}
+- Scripts are a collection of commands executed together.
+- `wget` and `curl` can be used to download data to your computer using the shell.
+:::
