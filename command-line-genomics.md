@@ -83,6 +83,23 @@ with a keyboard.
 
 Off to JupyterHub 🚀
 
+## Exercise: Long `ls`
+
+Use the `-l` option for the `ls` command to display more information
+for each item in the directory.
+
+What is one piece of additional information this long format gives you
+that you don’t see with the bare `ls` command?
+
+. . .
+
+```
+$ ls -l
+total 8
+drwxr-x--- 2 dcuser dcuser 4096 Jul 30  2015 sra_metadata
+drwxr-xr-x 2 dcuser dcuser 4096 Nov 15  2017 untrimmed_fastq
+```
+
 ## Key points
 
 ::: {.incremental}
