@@ -314,7 +314,107 @@ $ ls -l backup
 
 ## Key points
 
+::: {.incremental}
 - You can view file contents using `less`, `cat`, `head` or `tail`.
 - The commands `cp`, `mv`, and `mkdir` are useful for manipulating existing files and creating new directories.
 - You can view file permissions using `ls -l` and change permissions using `chmod`.
 - The `history` command and the up arrow on your keyboard can be used to repeat recently used commands.
+:::
+
+# Redirection
+
+## Objectives
+
+::: {.incremental}
+- Employ the `grep` command to search for information within files.
+- Print the results of a command to a file.
+- Construct command pipelines with two or more stages.
+- Use `for` loops to run the same command for several input files.
+:::
+
+## Exercise
+
+1. Search for the sequence `GNATNACCACTTCC` in the `SRR098026.fastq`
+   file. Have your search return all matching lines and the name (or
+   identifier) for each sequence that contains a match.
+2. Search for the sequence AAGTT in both FASTQ files. Have your search
+   return all matching lines and the name (or identifier) for each
+   sequence that contains a match.
+   
+. . .
+
+```
+$ grep -B1 GNATNACCACTTCC SRR098026.fastq
+@SRR098026.245 HWUSI-EAS1599_1:2:1:2:801 length=35
+GNATNACCACTTCCAGTGCTGANNNNNNNGGGATG
+$ grep -B1 AAGTT *.fastq
+SRR097977.fastq-@SRR097977.11 209DTAAXX_Lenski2_1_7:8:3:247:351 length=36
+SRR097977.fastq:GATTGCTTTAATGAAAAAGTCATATAAGTTGCCATG
+--
+SRR097977.fastq-@SRR097977.67 209DTAAXX_Lenski2_1_7:8:3:544:566 length=36
+SRR097977.fastq:TTGTCCACGCTTTTCTATGTAAAGTTTATTTGCTTT
+--
+...
+```
+
+## Exercise
+
+How many sequences are there in SRR098026.fastq?
+
+Remember that every sequence is formed by four lines.
+
+. . .
+
+```
+$ wc -l SRR098026.fastq
+996
+```
+
+## Exercise
+
+How many sequences in `SRR098026.fastq` contain at least 3 consecutive Ns?
+
+. . .
+
+```
+$ grep NNN SRR098026.fastq > bad_reads.txt
+$ wc -l bad_reads.txt
+```
+
+## Exercise
+
+Print the file prefix of all of the `.txt` files in our current directory.
+
+. . .
+
+```
+$ for filename in *.txt
+> do
+> name=$(basename ${filename} .txt)
+> echo ${name}
+> done
+```
+
+## Exercise
+
+Remove `_2019` from all of the `.txt` files.
+
+```
+$ for filename in *_2019.txt
+> do
+> name=$(basename ${filename} _2019.txt)
+> mv ${filename} ${name}.txt
+> done
+```
+
+## Key points
+
+::: {.incremental}
+- `grep` is a powerful search tool with many options for customization.
+- `>`, `>>`, and `|` are different ways of redirecting output.
+- `command > file` redirects a command’s output to a file.
+- `command >> file` redirects a command’s output to a file without overwriting the existing contents of the file.
+- `command_1 | command_2` redirects the output of the first command as input to the second command.
+- `for` loops are used for iteration.
+- `basename` gets rid of repetitive parts of names.
+:::
