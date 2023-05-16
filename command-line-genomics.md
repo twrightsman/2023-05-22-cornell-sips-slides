@@ -13,6 +13,7 @@ height: 1080
 https://twrightsman.github.io/shell-genomics
 
 ::: {.notes}
+- not recommended to open now
 - don't worry about writing down everything
 - focus on understanding
 :::
