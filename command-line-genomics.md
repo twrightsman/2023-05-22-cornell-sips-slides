@@ -31,13 +31,13 @@ https://twrightsman.github.io/shell-genomics
 
 # Introducing the Shell
 
-## Questions
+## Objectives
 
 ::: {.incremental}
-- What is a command shell and why would I use one?
-- How can I move around on my computer?
-- How can I see what files and directories I have?
-- How can I specify the location of a file or directory on my computer?
+- Describe key reasons for learning shell.
+- Navigate your file system using the command line.
+- Access and read help files for bash programs and use help files to identify useful command options.
+- Demonstrate the use of tab completion, and explain its advantages.
 :::
 
 ## What is a shell...
@@ -111,11 +111,14 @@ drwxr-xr-x 2 dcuser dcuser 4096 Nov 15  2017 untrimmed_fastq
 
 # Navigating Files and Directories
 
-## Questions
+## Objectives
 
 ::: {.incremental}
-- How can I perform operations on files outside of my working directory?
-- What are some navigational shortcuts I can use to make my work more efficient?
+- Use a single command to navigate multiple steps in your directory structure, including moving backwards (one level up).
+- Perform operations on files in directories outside your working directory.
+- Work with hidden directories and hidden files.
+- Interconvert between absolute and relative paths.
+- Employ navigational shortcuts to move around your file system.
 :::
 
 ## Exercise: Finding Hidden Directories
@@ -177,13 +180,13 @@ Using the filesystem diagram below, if pwd displays `/Users/thing`, what will `l
 
 # Working with Files and Directories
 
-## Questions
+## Objectives
 
 ::: {.incremental}
-- How can I view and search file contents?
-- How can I create, copy, and delete files and directories?
-- How can I control who has permission to modify a file?
-- How can I repeat recently used commands?
+- View, search within, copy, move, and rename files. Create new directories.
+- Use wildcards (`*`) to perform operations on multiple files.
+- Make a file read only.
+- Use the history command to view and repeat recently used commands.
 :::
 
 ## Exercise: Wildcards
