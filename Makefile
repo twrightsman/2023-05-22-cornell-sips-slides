@@ -11,7 +11,7 @@ clean:
 	  --standalone \
 	  --self-contained \
 	  --css slides.css \
-	  --from markdown+link_attributes+tex_math_dollars \
+	  --from markdown+link_attributes+tex_math_dollars+simple_tables \
 	  --output $*.html \
 	  --variable revealjs-url:reveal.js \
 	  --table-of-contents \

@@ -174,3 +174,144 @@ Using the filesystem diagram below, if pwd displays `/Users/thing`, what will `l
   directory, while absolute paths specify a location starting from the
   root of the file system.
 :::
+
+# Working with Files and Directories
+
+## Questions
+
+::: {.incremental}
+- How can I view and search file contents?
+- How can I create, copy, and delete files and directories?
+- How can I control who has permission to modify a file?
+- How can I repeat recently used commands?
+:::
+
+## Exercise: Wildcards
+
+Do each of the following tasks from your current directory using a single `ls` command for each:
+
+1. List all of the files in `/usr/bin` that start with the letter ‘c’.
+2. List all of the files in `/usr/bin` that contain the letter ‘a’.
+3. List all of the files in `/usr/bin` that end with the letter ‘o’.
+
+Bonus: List all of the files in `/usr/bin` that contain the letter ‘a’ or the letter ‘c’.
+
+Hint: The bonus question requires a Unix wildcard that we haven’t talked about yet.
+Try searching the internet for information about Unix wildcards to find what you need to solve the bonus problem.
+
+## Exercise: Wildcards
+
+1. `ls /usr/bin/c*`
+2. `ls /usr/bin/*a*`
+3. `ls /usr/bin/*o`
+
+Bonus: `ls /usr/bin/*[ac]*`
+
+## Exercise: `echo`
+
+`echo` is a shell command that writes its arguments to the shell's output.
+It also works with wildcards.
+
+```
+$ echo *.fastq
+SRR097977.fastq SRR098026.fastq
+```
+
+Notice the output of `echo *.fastq` is the same as `ls *.fastq`.
+
+What if the wildcard could not be matched?
+
+**Compare the outputs of** `echo *.missing` **and** `ls *.missing`.
+
+## Exercise: `echo`
+
+```
+$ echo *.missing
+*.missing
+$ ls *.missing
+ls: cannot access '*.missing': No such file or directory
+```
+
+## Exercise: Replaying History
+
+Find the line number in your history for the command that listed all the .sh files in `/usr/bin`.
+
+Rerun that command.
+
+## Exercise: Viewing File Contents
+
+1. Print out the contents of the `~/shell_data/untrimmed_fastq/SRR097977.fastq` file.
+   What is the last line of the file?
+2. From your home directory, and without changing directories, use one short command to print the contents of all of the files in the `~/shell_data/untrimmed_fastq` directory.
+
+. . .
+
+1. The last line of the file is `C:CCC::CCCCCCCC<8?6A:C28C<608'&&&,'$`
+2. `cat ~/shell_data/untrimmed_fastq/*`
+
+## Exercise: Searching with `less`
+
+What are the next three nucleotides (characters) after the first instance of the sequence `TTTTT`?
+
+. . .
+
+`CAC`
+
+## FASTQ format
+
+ Line  Description
+------ ------------
+ 1      Always begins with ‘@’ and then information about the read
+ 2      The actual DNA sequence
+ 3      Always begins with a ‘+’ and sometimes the same info in line 1
+ 4      Has a string of characters which represent the quality scores<br>Must have same number of characters as line 2
+
+. . .
+
+```
+Quality encoding: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJK
+                  |         |         |         |         |
+Quality score:    0........10........20........30........40..
+```
+
+. . .
+
+$$Q = -10 \log_{10} P$$
+
+10 = 90%, 20 = 99%, etc...
+
+## UNIX file permissions
+
+![](media/rwx_figure.svg)
+
+## Exercise: Write-protecting files
+
+Starting in the `shell_data/untrimmed_fastq/` directory, do the following:
+
+1. Make sure that you have deleted your backup directory and all files it contains.
+2. Create a backup of each of your FASTQ files using `cp`.
+3. Use a wildcard to move all of your backup files to a new backup directory.
+4. Change the permissions on all of your backup files to be write-protected.
+
+Hint: You may need to look at `man cp` and `man mv` for instructions on how to use these commands with wildcards.
+
+. . .
+
+```
+$ rm -r backup
+$ cp SRR098026.fastq SRR098026-backup.fastq
+$ cp SRR097977.fastq SRR097977-backup.fastq
+$ mkdir backup
+$ mv *-backup.fastq backup
+$ chmod -w backup/*-backup.fastq
+$ ls -l backup
+-r--r--r-- 1 dcuser dcuser 47552 Nov 15 23:06 SRR097977-backup.fastq
+-r--r--r-- 1 dcuser dcuser 43332 Nov 15 23:06 SRR098026-backup.fastq
+```
+
+## Key points
+
+- You can view file contents using `less`, `cat`, `head` or `tail`.
+- The commands `cp`, `mv`, and `mkdir` are useful for manipulating existing files and creating new directories.
+- You can view file permissions using `ls -l` and change permissions using `chmod`.
+- The `history` command and the up arrow on your keyboard can be used to repeat recently used commands.
