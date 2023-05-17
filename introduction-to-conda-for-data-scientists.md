@@ -182,3 +182,184 @@ Conda is an open source **package and environment management** system that runs 
   programming language.
 - (Ana)conda is not only for Python.
 :::
+
+# Working with Environments
+
+## Objectives
+
+::: {.incremental}
+- Understand how Conda environments can improve your research workflow.
+- Create a new environment.
+- Activate (deactivate) a particular environment.
+- Install packages into existing environments using Conda.
+- Specify the installation location of an environment.
+- List all of the existing environments on your machine.
+- List all of the installed packages within a particular environment.
+- Delete an entire environment.
+:::
+
+## What is a Conda environment?
+
+A directory that contains a specific collection of Conda packages.
+
+For example: NumPy 1.20, matplotlib 3.5, and Python 3.9.
+
+You can change the active Conda environment as needed.
+
+. . .
+
+**(!)** Avoid changing the `base` environment.
+
+## Live demo
+
+Off to JupyterHub 🚀
+
+## Exercise: Creating a new environment
+
+Create a new environment called “machine-learning-env” with Python and
+the most current versions of IPython, Matplotlib, Pandas, Numba and
+Scikit-Learn.
+
+. . .
+
+```
+$ conda create --name machine-learning-env \
+  ipython \
+  matplotlib \
+  pandas \
+  python \
+  scikit-learn \
+  numba
+```
+
+## Exercise: Activate an existing environment by name
+
+Activate the `machine-learning-env` environment created in the previous challenge by name.
+
+. . .
+
+```
+(base) $ conda activate machine-learning-env
+(machine-learning-env) $
+```
+
+## Exercise: Deactivate the active environment
+
+Deactivate the `machine-learning-env` environment that you activated in the previous challenge.
+
+**Bonus:** Try to import `numba` when the `machine-learning-env`
+environment is active and when it is not active. What do you see?
+
+. . .
+
+```
+(active-environment-name) $ conda deactivate
+(base) $
+```
+
+## Exercise: Installing a package into a specific environment
+
+Have a read through the official documentation for the `conda install`
+command and see if you can figure out how to install Dask into the
+machine-learning-env that you created in the previous challenge.
+
+Hint: You can either search online or use the help flag to `conda install`.
+
+. . .
+
+You can install Dask into `machine-learning-env` using the `conda install` command as follows.
+
+```
+$ conda install --name machine-learning-env dask=2.16
+```
+
+You could also install Dask into `machine-learning-env` by first activating that environment and then using the `conda install` command.
+
+```
+$ conda activate machine-learning-env
+$ conda install dask=2020.12
+```
+
+## Exercise: Creating a new environment as a sub-directory within a project directory
+
+First create a project directory called project-dir using the following command.
+
+```
+$ mkdir project-dir
+$ cd project-dir
+```
+
+Next, create a new environment inside the newly created `project-dir` in a sub-directory called `env` and install Python 3.6, version 3.1 of Matplotlib, and version 2.0 of TensorFlow.
+
+. . .
+
+```
+$ conda create --prefix ./env \
+  python=3.6 \
+  matplotlib=3.1 \
+  tensorflow=2.0
+```
+
+## Exercise: R dependencies with Conda
+
+First create a project directory called `r-project-dir` using the
+following command.
+
+```
+$ cd ~/Desktop/introduction-to-conda-for-data-scientists
+$ mkdir r-project-dir
+$ cd r-project-dir
+```
+
+Next, take a look through the list of R packages available by default
+for installation using Conda. Create a new environment inside the
+newly created `r-project-dir` in a sub-directory called `env` and
+install `r-base`, `r-tidyverse` and `r-sparklyr`.
+
+. . .
+
+```
+$ conda create --prefix ./env \
+> r-base \
+> r-tidyverse \
+> r-sparklyr \
+```
+
+## Exercise: Listing packages in an environment
+
+List the packages installed in the `machine-learning-env` environment
+that you created in a previous challenge.
+
+. . .
+
+```
+$ conda list --name machine-learning-env
+```
+
+or
+
+```
+$ conda activate machine-learning-env
+$ conda list
+```
+
+## Exercise: Delete an entire environment
+
+Delete the entire “basic-scipy-env” environment.
+
+. . .
+
+```
+$ conda remove --name basic-scipy-env --all
+```
+
+## Key points
+
+::: {.incremental}
+- A Conda environment is a directory that contains a specific collection of Conda packages that you have installed.
+- You create (remove) a new environment using the `conda create` (`conda remove`) commands.
+- You activate (deactivate) an environment using the `conda activate` (`conda deactivate`) commands.
+- You install packages into environments using `conda install`.
+- Use the `conda env list` command to list existing environments and their respective locations.
+- Use the `conda list` command to list all of the packages installed in an environment.
+:::
