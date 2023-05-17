@@ -167,7 +167,7 @@ Conda is an open source **package and environment management** system that runs 
 
 ## Conda vs. Miniconda vs. Anaconda
 
-![](media/miniconda_vs_anaconda.png)
+![](media/miniconda_vs_anaconda.png){.r-stretch}
 
 ## Key points
 
