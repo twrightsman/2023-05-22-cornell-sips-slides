@@ -363,3 +363,127 @@ $ conda remove --name basic-scipy-env --all
 - Use the `conda env list` command to list existing environments and their respective locations.
 - Use the `conda list` command to list all of the packages installed in an environment.
 :::
+
+# Using Packages and Channels
+
+## Objectives
+
+::: {.incremental}
+- Understand Conda packages and channels.
+- Install packages from specific channels.
+- Understand why being explicit with channel selection is important.
+- Be able to install Python (and R) packages not in Conda into a Conda environment.
+:::
+
+## What is a Conda package?
+
+A compressed archive file (think `.zip`) of a specific software.
+
+. . .
+
+More specifically, it includes things like:
+
+::: {.incremental}
+1. The executable programs of that software (_e.g._ `bash` or `nano`)
+2. The libraries/modules of that software
+3. Metadata describing the package (name, author, version, etc)
+:::
+
+## Conda Package structure
+
+Example of a PyTorch 1.1 Conda package.
+
+```
+.
+├── bin
+│   └── convert-caffe2-to-onnx
+│   └── convert-onnx-to-caffe2
+├── info
+│   ├── LICENSE.txt
+│   ├── about.json
+│   ├── files
+│   ├── git
+│   ├── has_prefix.json
+│   ├── hash_input.json
+│   ├── index.json
+│   ├── paths.json
+│   ├── recipe/
+│   └── test/
+└── lib
+    └── python3.6
+        └── site-packages
+            ├── caffe2/
+            ├── torch/
+            └── torch-1.1.0-py3.6.egg-info/
+```
+
+. . .
+
+Note this does not have any of PyTorch's dependencies.
+Those are in their own Conda packages.
+
+## What are Conda channels?
+
+::: {.incremental}
+- A Conda package is associated with a specific channel.
+- The default channels include the `main` Anaconda channel and others
+  managed by Anaconda
+- `conda-forge` is a big channel that replaces `main`
+- `bioconda` has biology-specific packages like `BioPython`
+    - packages in `bioconda` depend on `conda-forge` packages
+:::
+
+## `conda-forge`
+
+You might want to use `conda-forge` over `main` for a few reasons:
+
+1. Packages in `conda-forge` are usually more up-to-date than in `main`
+2. `conda-forge` has many packages not in `main`
+3. `conda-forge` prioritizes open-source dependencies
+4. `conda-forge` is maintained by a large community, instead of a single entity
+
+## Exercise: Using the `pytorch` channel
+
+Like many projects, PyTorch has its own channel on Anaconda
+Cloud. This channel has several interesting packages, in particular
+`pytorch` (PyTorch core) and `torchvision` (datasets, transforms, and
+models specific to computer vision).
+
+Create a new directory called `my-computer-vision-project` and then
+create a Python 3.6 environment in a sub-directory called `env/` with
+the two packages listed above. Also include the most recent version of
+`jupyterlab` in your environment (so you have a nice UI) and
+`matplotlib` (so you can make plots).
+
+. . .
+
+```
+$ mkdir my-computer-vision-project
+$ cd my-computer-vision-project/
+$ conda create --prefix ./env --channel pytorch \
+  python=3.6 \
+  jupyterlab=1.0 \
+  pytorch=1.1 \
+  torchvision=0.3 \
+  matplotlib=3.1
+```
+
+## Exercise: Using `pip` inside Conda environments
+
+Activate the `machine-learning-env` you created in a previous challenge and use `pip` to install `combo`.
+
+. . .
+
+```
+$ conda install --name machine-learning-env pip
+$ conda activate machine-learning-env
+$ python -m pip install combo==0.1.*
+```
+
+## Key points
+
+::: {.incremental}
+- A package is a tarball containing system-level libraries, Python or other modules, executable programs and other components, and associated metadata.
+- A Conda channel is a URL to a directory containing a Conda package(s).
+- Understand how to use Conda and Pip together effectively.
+:::
