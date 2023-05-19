@@ -487,3 +487,131 @@ $ python -m pip install combo==0.1.*
 - A Conda channel is a URL to a directory containing a Conda package(s).
 - Understand how to use Conda and Pip together effectively.
 :::
+
+# Sharing Environments
+
+## Objectives
+
+::: {.incremental}
+- Create an environment from a YAML file that can be read by Windows, Mac OS, or Linux.
+- Create an environment based on exact package versions.
+:::
+
+## Environment files
+
+```yaml
+name: machine-learning-env
+
+dependencies:
+  - ipython
+  - matplotlib
+  - pandas
+  - pip
+  - python
+  - scikit-learn
+
+```
+
+## Why create environment files?
+
+::: {.incremental}
+1. Makes it easier for you to quickly run your code in other environments (_e.g._ other machines)
+    - _e.g._ A supercomputing cluster, your Linux workstation, your MacOS laptop, you in 6 months
+2. Makes it easier for your collaborators to run your code
+3. Easy recovery if you break your environment while testing lots of software
+:::
+
+## Better environment files with explicit versions
+
+```yaml
+name: machine-learning-env
+
+dependencies:
+  - ipython=7.13
+  - matplotlib=3.1
+  - pandas=1.0
+  - pip=20.0
+  - python=3.6
+  - scikit-learn=0.22
+```
+
+- Depends on the software, but specifying major and minor versions (`X.Y`) is specific enough
+
+## Version control your environment files
+
+::: {.incremental}
+- Don't check your actual Conda environment folders into version control
+- Instead, check in the environment file to create them
+- Helps keep your environment and code in sync
+    - If you need to run old code, can go back and recreate your exact environment
+:::
+
+## Exercise: Create an environment from an environment file
+
+Create a new project directory and then create a new `environment.yml` file inside your project directory with the following contents.
+
+```yaml
+name: scikit-learn-env
+
+dependencies:
+  - ipython=7.13
+  - matplotlib=3.1
+  - pandas=1.0
+  - pip=20.0
+  - python=3.6
+  - scikit-learn=0.22
+```
+
+Now use this file to create a new Conda environment. Where is this new
+environment created? Using the same `environment.yml` file create a
+Conda environment as a sub-directory called `env/` inside a newly
+created project directory. Compare the contents of the two
+environments.
+
+```
+$ mkdir scikit-learn-project-dir
+$ cd scikit-learn-project-dir
+$ nano environment.yml
+$ conda env create --file environment.yml
+$ conda env create --file environment.yml --prefix ./env
+```
+
+## Specifying channels in your environment files
+
+```yaml
+name: pytorch-env
+
+channels:
+  - pytorch
+  - defaults
+
+dependencies:
+	- pytorch=1.1
+```
+
+## Using `pip` in your environment files
+
+```yaml
+name: example
+
+dependencies:
+  - jupyterlab=1.0
+  - matplotlib=3.1
+  - pandas=0.24
+  - scikit-learn=0.21
+  - pip=19.1
+  - pip:
+    - kaggle==1.5
+    - yellowbrick==0.9
+```
+
+```yaml
+  - pip
+  - pip:
+    - -r file:requirements.txt
+```
+
+## Key points
+
+- Sharing Conda environments with other researchers facilitates the reprodicibility of your research.
+- Environment files explicitly describe your project's software environment.
