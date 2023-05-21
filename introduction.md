@@ -53,10 +53,10 @@ Carpentries using the link on the course website.
 
 ::: {.incremental}
 - Minute cards
-    - index cards at the end of each day/lesson
+    - anonymous index cards at the end of each day/lesson
 	- positive and/or constructive feedback (will show prompts later)
 - One Up, One Down
-    - Each learner gives one positive and one negative point about the lesson
+    - Each learner gives one positive and one constructive point about the lesson
 	- No repeating what a previous learner has already said
 - Sticky notes
     - Green = I'm done with the task and ready to move on
