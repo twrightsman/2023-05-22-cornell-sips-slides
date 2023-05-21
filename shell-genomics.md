@@ -81,6 +81,54 @@ with a keyboard.
 - explain that JupyterHub we are using is running on Linux
 :::
 
+## Filesystems
+
+:::: {.columns}
+::: {.column width="33%"}
+Windows
+
+```
+C:
+├── Program Files
+├── Users
+│   ├── Administrator
+│   ├── Public
+│   └── ...
+└── ...
+D:
+E:
+```
+:::
+::: {.column width="33%"}
+MacOS
+
+```
+/
+├── Applications
+├── Library
+├── Users
+│   ├── User1
+│   └── ...
+└── ...
+```
+:::
+::: {.column width="33%"}
+Linux
+
+```
+/
+├── bin
+├── etc
+├── home
+│   ├── user1
+│   └── ...
+└── ...
+```
+:::
+::::
+
+Organize files and folders into a tree structure.
+
 ## Live demo
 
 Off to JupyterHub 🚀
