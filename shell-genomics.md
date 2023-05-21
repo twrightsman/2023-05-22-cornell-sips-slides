@@ -52,6 +52,8 @@ with a keyboard.
 ::: {.notes}
 - as opposed to a GUI which you control with keyboard + mouse +
   touchscreen
+- discuss the pieces of the prompt
+    - they can take many forms depending on settings
 :::
 
 ## ...and why should I care?
