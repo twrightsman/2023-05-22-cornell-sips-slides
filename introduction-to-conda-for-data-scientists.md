@@ -8,6 +8,16 @@ width: 1920
 height: 1080
 ---
 
+## Course material is available for later reference
+
+https://twrightsman.github.io/introduction-to-conda-for-data-scientists
+
+::: {.notes}
+- not recommended to open now
+- don't worry about writing down everything
+- focus on understanding
+:::
+
 # Getting Started with Conda
 
 ## Objectives
