@@ -21,7 +21,6 @@ height: 1080
 ::: {.incremental}
 - "We teach foundational coding and data science skills to researchers
   worldwide."
-- Merger of Data, Library, and Software Carpentry organizations
 - Some of their activities...
     - Designing and maintaining open curriculum
 	- Training instructors
