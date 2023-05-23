@@ -226,6 +226,8 @@ You can change the active Conda environment as needed.
 
 Off to JupyterHub 🚀
 
+`source /opt/tljh/user/bin/activate`
+
 ## Exercise: Creating a new environment
 
 Create a new environment called “machine-learning-env” with Python and
