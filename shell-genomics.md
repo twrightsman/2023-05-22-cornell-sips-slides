@@ -493,8 +493,8 @@ Add today’s date and then use **Ctrl+X** followed by **y** and **Enter** to sa
 
 We want the script to tell us when it’s done.
 
-1. Open `bad-reads-script.sh` and add the line `echo "Script
-   finished!"` after the `grep` command and save the file.
+1. Open `bad-reads-script.sh` and add the line `echo "Script finished!"`
+   after the `grep` command and save the file.
 2. Run the updated script.
 
 . . .
