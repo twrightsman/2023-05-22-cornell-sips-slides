@@ -12,6 +12,8 @@ height: 1080
 
 https://twrightsman.github.io/introduction-to-conda-for-data-scientists
 
+Link is in the course website schedule.
+
 ::: {.notes}
 - not recommended to open now
 - don't worry about writing down everything
