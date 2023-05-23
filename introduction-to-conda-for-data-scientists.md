@@ -230,7 +230,7 @@ Off to JupyterHub 🚀
 
 ## Exercise: Creating a new environment
 
-Create a new environment called “machine-learning-env” with Python and
+Create a new environment called “machine-learning-env-latest” with Python and
 the most current versions of IPython, Matplotlib, Pandas, Numba and
 Scikit-Learn.
 
@@ -245,6 +245,25 @@ $ conda create --name machine-learning-env \
   scikit-learn \
   numba
 ```
+
+## Exercise: Creating a new environment with specific versions
+
+Create a new environment called “machine-learning-env” with Python
+3.8, IPython 7.19, Matplotlib 3.3, Pandas 1.2, Numba 0.51, and
+Scikit-Learn 0.23.
+
+. . .
+
+```
+$ conda create --name machine-learning-env \
+  ipython=7.19 \
+  matplotlib=3.3 \
+  pandas=1.2 \
+  python=3.8 \
+  scikit-learn=0.23 \
+  numba=0.51
+```
+
 
 ## Exercise: Activate an existing environment by name
 
@@ -284,7 +303,7 @@ Hint: You can either search online or use the help flag to `conda install`.
 You can install Dask into `machine-learning-env` using the `conda install` command as follows.
 
 ```
-$ conda install --name machine-learning-env dask=2.16
+$ conda install --name machine-learning-env dask=2020.12
 ```
 
 You could also install Dask into `machine-learning-env` by first activating that environment and then using the `conda install` command.
@@ -303,7 +322,9 @@ $ mkdir project-dir
 $ cd project-dir
 ```
 
-Next, create a new environment inside the newly created `project-dir` in a sub-directory called `env` and install Python 3.6, version 3.1 of Matplotlib, and version 2.0 of TensorFlow.
+Next, create a new environment inside the newly created `project-dir`
+in a sub-directory called `env` and install Python 3.6, version 3.1 of
+Matplotlib, and version 2.4 of TensorFlow.
 
 . . .
 
@@ -311,7 +332,7 @@ Next, create a new environment inside the newly created `project-dir` in a sub-d
 $ conda create --prefix ./env \
   python=3.6 \
   matplotlib=3.1 \
-  tensorflow=2.0
+  tensorflow=2.4
 ```
 
 ## Exercise: R dependencies with Conda
@@ -336,7 +357,7 @@ install `r-base`, `r-tidyverse` and `r-sparklyr`.
 $ conda create --prefix ./env \
 > r-base \
 > r-tidyverse \
-> r-sparklyr \
+> r-sparklyr
 ```
 
 ## Exercise: Listing packages in an environment
@@ -486,6 +507,8 @@ $ conda create --prefix ./env --channel pytorch \
 
 Activate the `machine-learning-env` you created in a previous challenge and use `pip` to install `combo`.
 
+Hint: You may need to install `pip` into the environment first using Conda.
+
 . . .
 
 ```
@@ -627,8 +650,10 @@ dependencies:
 
 ## Key points
 
-- Sharing Conda environments with other researchers facilitates the reprodicibility of your research.
+::: {.incremental}
+- Sharing Conda environments with other researchers facilitates the reproducibility of your research.
 - Environment files explicitly describe your project's software environment.
+:::
 
 # Feedback
 
