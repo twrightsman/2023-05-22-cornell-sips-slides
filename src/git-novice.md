@@ -123,18 +123,6 @@ You can use `username@users.noreply.github.com` on GitHub.
 On Cornell's GitHub, it is in the form
 `id+username@users.noreply.github.com`.
 
-## `master` to `main`
-
-::: {.incremental}
-- Branches will be discussed later
-- The default initial branch used to be called `master`
-    - Software community has transitioned away from this due to its
-      connections with human slavery
-- Most online services (and recent versions of `git`) default to
-  `main`
-- It is configurable using `git config --global init.defaultBranch main`
-:::
-
 ## Key points
 
 ::: {.incremental}
@@ -149,6 +137,18 @@ On Cornell's GitHub, it is in the form
 ::: {.incremental}
 - Create a local Git repository.
 - Describe the purpose of the `.git` directory.
+:::
+
+## `master` to `main`
+
+::: {.incremental}
+- Branches will be discussed later
+- The default initial branch used to be called `master`
+    - Software community has transitioned away from this due to its
+      connections with human slavery
+- Most online services (and recent versions of `git`) default to
+  `main`
+- It is configurable using `git config --global init.defaultBranch main`
 :::
 
 ## Discussion: Places to create Git repositories
