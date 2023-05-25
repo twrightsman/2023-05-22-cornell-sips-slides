@@ -1,7 +1,8 @@
 decks = site/introduction.html \
         site/shell-genomics.html \
         site/introduction-to-conda-for-data-scientists.html \
-        site/bioinformatics-supplementary.html
+        site/bioinformatics-supplementary.html \
+        site/git-novice.html
 
 slides: $(decks)
 
