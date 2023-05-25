@@ -121,7 +121,7 @@ You can configure this in the GitHub account settings.
 You can use `username@users.noreply.github.com` on GitHub.
 
 On Cornell's GitHub, it is in the form
-`ID+USERNAME@users.noreply.github.com`.
+`id+username@users.noreply.github.com`.
 
 ## `master` to `main`
 
