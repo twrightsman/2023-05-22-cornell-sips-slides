@@ -147,11 +147,44 @@ On Cornell's GitHub, it is in the form
 ## Objectives
 
 ::: {.incremental}
+- Create a local Git repository.
+- Describe the purpose of the `.git` directory.
 :::
+
+## Discussion: Places to create Git repositories
+
+Along with tracking information about planets (the project we have
+already created), Dracula would also like to track information about
+moons. Despite Wolfman’s concerns, Dracula creates a `moons` project
+inside his `planets` project with the following sequence of commands:
+
+```
+$ cd             # return to the home directory
+$ cd planets     # go into planets directory, which is already a Git repository
+$ ls -a          # ensure the .git subdirectory is still present in the planets directory
+$ mkdir moons    # make a subdirectory planets/moons
+$ cd moons       # go into moons subdirectory
+$ git init       # make the moons subdirectory a Git repository
+$ ls -a          # ensure the .git subdirectory is present indicating we have created a new Git repository
+```
+
+Is the `git init` command, run inside the `moons` subdirectory,
+required for tracking files stored in the `moons` subdirectory?
+
+. . .
+
+Since the nested repository is redundant, how might Dracula undo this
+`git init` in the `moons` subdirectory?
+
+. . .
+
+`rm -rf ~/planets/moons/.git`
 
 ## Key points
 
 ::: {.incremental}
+- `git init` initializes a repository.
+- Git stores all of its repository data in the `.git` directory.
 :::
 
 # Tracking Changes
