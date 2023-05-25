@@ -110,11 +110,36 @@ Unless two users change the same lines, changes can be merged without a conflict
 ## Objectives
 
 ::: {.incremental}
+- Configure `git` the first time it is used on a computer.
+- Understand the meaning of the `--global` configuration flag.
+:::
+
+## Keeping your email private
+
+You can configure this in the GitHub account settings.
+
+You can use `username@users.noreply.github.com` on GitHub.
+
+On Cornell's GitHub, it is in the form
+`ID+USERNAME@users.noreply.github.com`.
+
+## `master` to `main`
+
+::: {.incremental}
+- Branches will be discussed later
+- The default initial branch used to be called `master`
+    - Software community has transitioned away from this due to its
+      connections with human slavery
+- Most online services (and recent versions of `git`) default to
+  `main`
+- It is configurable using `git config --global init.defaultBranch main`
 :::
 
 ## Key points
 
 ::: {.incremental}
+- Use `git config` with the `--global` option to configure a user
+  name, email address, editor, and other preferences once per machine.
 :::
 
 # Creating a Repository
