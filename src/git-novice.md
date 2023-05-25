@@ -78,13 +78,13 @@ applied to the initial document.
 
 ## Changes can be made in parallel...
 
-![](media/versions.svg){width="80%"}
+![](media/versions.svg){width="55%"}
 
 _e.g._ Multiple users modifying a document at the same time.
 
 ## ...and merged later
 
-![](media/merge.svg){width="80%"}
+![](media/merge.svg){width="55%"}
 
 Unless two users change the same lines, changes can be merged without a conflict.
 
