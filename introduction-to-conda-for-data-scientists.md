@@ -655,17 +655,32 @@ dependencies:
 - Environment files explicitly describe your project's software environment.
 :::
 
-# Feedback
+# Miscellanea
 
-## Minute cards
+## Tips/Tricks
 
-- Example positive prompts
-    - One thing you liked about this section of the workshop
-	- The most important thing you learned today
-	- A new skill, command, or technique you are most excited about using
-- Example constructive prompts
-    - One thing you did not like or would change about this section of the workshop
-	- One thing that is confusing / you would like clarification on
-	- One question you have
+::: {.incremental}
+- **Avoid** modifying your `(base)` environment!
+    - Exception: `conda update --name base conda`
+- Don't mix `defaults` and `conda-forge`
+    - use `bioconda` only with `conda-forge`
+- Make an environment file as soon as you confirm the tool(s) work(s), if not sooner
+- Keep your environment file checked in to your code repo with version control
+    - can run old versions of a script with the exact environment you wrote it in
+- Use mamba/libmamba when possible (see next slide)
+:::
 
-## One Up, One Down
+## Mamba / libmamba
+
+![](media/mamba.webp)
+
+::: {.incremental}
+- Mamba = redo of Conda in C++ (fast!) instead of Python (slower)
+- libmamba = Allows Conda to use Mamba for the slow parts
+:::
+
+## Installing and uninstalling Conda
+
+Live demo time!
+
+Miniconda vs. Miniforge vs. Mambaforge
