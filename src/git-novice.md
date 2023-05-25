@@ -209,3 +209,18 @@ and forth:
 
 ::: {.incremental}
 :::
+
+# Feedback
+
+## Minute cards
+
+- Example positive prompts
+    - One thing you liked about this section of the workshop
+	- The most important thing you learned today
+	- A new skill, command, or technique you are most excited about using
+- Example constructive prompts
+    - One thing you did not like or would change about this section of the workshop
+	- One thing that is confusing / you would like clarification on
+	- One question you have
+
+## One Up, One Down
