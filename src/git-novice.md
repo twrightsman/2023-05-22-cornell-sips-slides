@@ -192,11 +192,90 @@ Since the nested repository is redundant, how might Dracula undo this
 ## Objectives
 
 ::: {.incremental}
+- Go through the modify-add-commit cycle for one or more files.
+- Explain where information is stored at each stage of that cycle.
+- Distinguish between descriptive and non-descriptive commit messages.
 :::
+
+## What is the staging area?
+
+![](media/git-staging-area.svg){width="80%"}
+
+You can think of commits like "snapshots" of the repository that
+stores the changes since the last commit.
+
+## Why have a staging area?
+
+::: {.incremental}
+- It lets you only commit some of your changes at a time in logical
+  "chunks"
+- Maybe you want to add some citations but not the changes to the
+  conclusion since they're not ready yet
+:::
+
+
+## Discussion: Choosing a commit message
+
+Which of the following commit messages would be most appropriate for
+the last commit made to `mars.txt`?
+
+1. "Changes"
+2. “Added line ‘But the Mummy will appreciate the lack of humidity’ to mars.txt”
+3. “Discuss effects of Mars’ climate on the Mummy”
+
+## Exercise: Committing multiple files
+
+The staging area can hold changes from any number of files that you want to commit as a single snapshot.
+
+1. Add some text to `mars.txt` noting your decision to consider Venus
+   as a base.
+2. Create a new file `venus.txt` with your initial thoughts about
+   Venus as a base for you and your friends.
+3. Add changes from both files to the staging area, and commit those
+   changes.
+
+. . .
+
+```
+$ nano mars.txt
+$ nano venus.txt
+$ git add mars.txt venus.txt
+$ git commit -m "Write plans to start a base on Venus"
+```
+
+## Exercise: `bio` repository
+
+1. Create a new Git repository on your computer called `bio`.
+2. Write a three-line biography for yourself in a file called `me.txt`, commit your changes.
+3. Modify one line, and add a fourth line.
+4. Display the differences between its updated state and its original state.
+
+. . .
+
+```
+$ cd
+$ mkdir bio
+$ cd bio
+$ git init
+$ nano me.txt
+$ git add me.txt
+$ git commit -m "Add biography file"
+$ nano me.txt
+$ git diff me.txt
+```
 
 ## Key points
 
 ::: {.incremental}
+- `git status` shows the status of a repository.
+- Files can be stored in a project’s working directory (which users
+  see), the staging area (where the next commit is being built up) and
+  the local repository (where commits are permanently recorded).
+- `git add` puts files in the staging area.
+- `git commit` saves the staged content as a new commit in the local
+  repository.
+- Write a commit message that accurately describes/summarizes your
+  changes.
 :::
 
 # Exploring History
