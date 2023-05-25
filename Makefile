@@ -1,5 +1,6 @@
 modules = introduction.html shell-genomics.html \
-          introduction-to-conda-for-data-scientists.html
+          introduction-to-conda-for-data-scientists.html \
+          bioinformatics-supplementary.html
 
 slides: $(modules)
 
