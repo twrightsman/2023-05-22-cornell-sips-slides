@@ -1,20 +1,22 @@
-modules = introduction.html shell-genomics.html \
-          introduction-to-conda-for-data-scientists.html \
-          bioinformatics-supplementary.html
+decks = site/introduction.html \
+        site/shell-genomics.html \
+        site/introduction-to-conda-for-data-scientists.html \
+        site/bioinformatics-supplementary.html
 
-slides: $(modules)
+slides: $(decks)
 
 clean:
-	rm --force *.html
+	rm --force site/*.html
 
-%.html: %.md #slides.css media/*
+site/%.html: src/%.md
 	pandoc \
 	  --to revealjs \
 	  --standalone \
 	  --self-contained \
 	  --css slides.css \
 	  --from markdown+link_attributes+tex_math_dollars+simple_tables \
-	  --output $*.html \
+	  --resource-path src/ \
+	  --output $@ \
 	  --variable revealjs-url:reveal.js \
 	  --table-of-contents \
 	  --toc-depth 1 \
