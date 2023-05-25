@@ -59,11 +59,50 @@ and forth:
 ## Objectives
 
 ::: {.incremental}
+- Understand the benefits of an automated version control system.
+- Understand the basics of how automated version control systems work.
 :::
+
+## Without version control
+
+![](media/phd-version-control.png){.r-stretch}
+
+## Version control tracks changes in steps
+
+![](media/play-changes.svg){width="80%"}
+
+. . .
+
+Think of the final document as the result when all of the changes are
+applied to the initial document.
+
+## Changes can be made in parallel...
+
+![](media/versions.svg){width="80%"}
+
+_e.g._ Multiple users modifying a document at the same time.
+
+## ...and merged later
+
+![](media/merge.svg){width="80%"}
+
+Unless two users change the same lines, changes can be merged without a conflict.
+
+## Discussion: Paper Writing
+
+- Imagine you drafted an excellent paragraph for a paper you are
+  writing, but later ruin it. How would you retrieve the excellent
+  version of your conclusion? Is it even possible?
+- Imagine you have 5 co-authors. How would you manage the changes and
+  comments they make to your paper? If you use LibreOffice Writer or
+  Microsoft Word, what happens if you accept changes made using the
+  *Track Changes* option? Do you have a history of those changes?
 
 ## Key points
 
 ::: {.incremental}
+- Version control is like an unlimited ‘undo’.
+- Version control also allows many people to work in parallel.
 :::
 
 # Setting Up Git
