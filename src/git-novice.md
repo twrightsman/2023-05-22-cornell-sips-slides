@@ -651,11 +651,44 @@ Acts as a shareable electronic lab notebook for computational work.
 ## Objectives
 
 ::: {.incremental}
+- Explain why adding licensing information to a repository is
+  important.
+- Choose a proper license.
+- Explain differences in licensing and social expectations.
+:::
+
+## Why have a license?
+
+::: {.incremental}
+- When source code, manuscripts, or other creative works become
+  public, it should have a `LICENSE` file in the root of the
+  repository that clearly states how people are allowed to share and
+  modify it.
+    - These creative works are intellectual property and have
+      copyright protection.
+- You can use [choosealicense.com](choosealicense.com) to help guide
+  you.
+    - You and your co-authors usually have copyright of a manuscript, unless assigned to the journal.
+	- Whoever wrote code has copyright to that code and can assign a license.
+- Using a common license is ideal because people are already familiar
+  with their terms and are therefore more likely to use your code.
+- Changing a license later is harder because _all_ contributors must agree.
 :::
 
 ## Key points
 
 ::: {.incremental}
+- The `LICENSE`, `LICENSE.md`, or `LICENSE.txt` file is often used in
+  a repository to indicate how the contents of the repo may be used by
+  others.
+- People who incorporate General Public License (GPL’d) software into
+  their own software must make their software also open under the GPL
+  license; most other open licenses do not require this.
+- The Creative Commons family of licenses allow people to mix and
+  match requirements and restrictions on attribution, creation of
+  derivative works, further sharing, and commercialization.
+- People who are not lawyers should not try to write licenses from
+  scratch.
 :::
 
 # Citation
