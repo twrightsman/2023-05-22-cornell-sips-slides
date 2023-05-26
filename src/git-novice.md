@@ -711,11 +711,31 @@ Acts as a shareable electronic lab notebook for computational work.
 ## Objectives
 
 ::: {.incremental}
+- Explain different options for hosting scientific work.
 :::
+
+## Where can/should I host my code?
+
+::: {.incremental}
+1. Public code hosting platforms
+    - GitHub, GitLab, Bitbucket, Sourcehut (more advanced)
+	- Lots of tools available out of the box
+2. University platforms (e.g. Cornell GitHub Enterprise)
+    - may lose access after leaving
+3. Your own server (not recommended for beginners)
+:::
+
+. . .
+
+Check if you are allowed to post code publically before doing so.
 
 ## Key points
 
 ::: {.incremental}
+- Projects can be hosted on university servers, on personal domains,
+  or on a public hosting service.
+- Rules regarding intellectual property and storage of sensitive
+  information apply no matter where code and data are hosted.
 :::
 
 # Feedback
