@@ -11,12 +11,15 @@ index: slides site/index.html
 slides: $(decks)
 
 clean:
-	rm --force site/*.html
+	rm --force --recursive site/
 
-site/index.html:
+site:
+	mkdir $@
+
+site/index.html: site
 	python3 src/create-index.py site/ > site/index.html
 
-site/%.html: src/%.md
+site/%.html: src/%.md | site
 	pandoc \
 	  --to revealjs \
 	  --standalone \
