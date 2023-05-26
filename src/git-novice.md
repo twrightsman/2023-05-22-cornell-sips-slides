@@ -358,11 +358,45 @@ do you think will happen, and what does happen?
 ## Objectives
 
 ::: {.incremental}
+- Configure Git to ignore specific files.
+- Explain why ignoring files can be useful.
 :::
+
+## Discussion: Ignoring nested files
+
+Given a directory structure that looks like:
+
+```
+results/data
+results/plots
+```
+
+How would you ignore only `results/plots` and not `results/data`?
+
+. . .
+
+`results/data` in `.gitignore`
+
+## Discussion: Including specific files
+
+How would you ignore all `.dat` files in your root directory except
+for `final.dat`?
+
+Hint: The `!` prefix/operator tells Git to explicitly include a file.
+
+. . .
+
+```
+*.dat
+!final.dat
+```
+
+You should look up more on the ignore file format!
 
 ## Key points
 
 ::: {.incremental}
+- The `.gitignore` file tells Git what files to ignore.
 :::
 
 # Remotes in GitHub
