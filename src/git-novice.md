@@ -404,11 +404,52 @@ You should look up more on the ignore file format!
 ## Objectives
 
 ::: {.incremental}
+- Explain what remote repositories are and why they are useful.
+- Push to or pull from a remote repository.
 :::
+
+## Git on your local machine
+
+![](media/git-staging-area.svg){width="80%"}
+
+## Git on your local machine and a remote
+
+![](media/git-freshly-made-github-repo.svg){width="60%"}
+
+## SSH
+
+::: {.incremental}
+- a protocol that encrypts your network communication
+- uses a key _pair_
+    - one key in the pair is the **public key**, can hand it out (like to GitHub)
+	- the other is the **private key**, _keep this safe and private_!!!
+- GitHub uses the public key to encrypt stuff so only your private key can decrypt it, and vice-versa
+- Use a new keypair for each user you have on each computer
+- The course material has supplemental information on SSH if you are curious
+:::
+
+## After pushing to the remote
+
+![](media/github-repo-after-first-push.svg){width="70%"}
+
+## Exercise: GitHub GUI
+
+Browse to your `planets` repository on GitHub. Under the Code tab,
+find and click on the text that says “XX commits” (where “XX” is some
+number). Hover over, and click on, the three buttons to the right of
+each commit. What information can you gather/explore from these
+buttons? How would you get that same information in the shell?
 
 ## Key points
 
 ::: {.incremental}
+- A local Git repository can be connected to one or more remote
+  repositories.
+- Use the SSH protocol to connect to remote repositories.
+- `git push` copies changes from a local repository to a remote
+  repository.
+- `git pull` copies changes from a remote repository to a local
+  repository.
 :::
 
 # Collaborating
