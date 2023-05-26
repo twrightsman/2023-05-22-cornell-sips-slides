@@ -457,11 +457,38 @@ buttons? How would you get that same information in the shell?
 ## Objectives
 
 ::: {.incremental}
+- Clone a remote repository.
+- Collaborate by pushing to a common repository.
+- Describe the basic collaborative workflow.
 :::
+
+## Pair up!
+
+Pair up with someone near you to practice collaborating on a single repository.
+
+## Cloning a collaborator's repository
+
+![](media/github-collaboration.svg){width="50%"}
+
+## A basic collaborative workflow
+
+In case someone made changes while you were away, it's always good to
+`git pull` first.
+
+1. `git pull origin main` or `git pull`
+2. Make changes, then stage with `git add`
+3. Commit staged changes with `git commit -m`
+4. Upload the changes to GitHub with `git push origin main` or `git push`
+
+## Switch roles!
+
+Now the other person in each pair is the collaborator.
 
 ## Key points
 
 ::: {.incremental}
+- `git clone` copies a remote repository to create a local repository
+  with a remote called `origin` automatically set up.
 :::
 
 # Conflicts
@@ -469,11 +496,59 @@ buttons? How would you get that same information in the shell?
 ## Objectives
 
 ::: {.incremental}
+- Explain what conflicts are and when they can occur.
+- Resolve conflicts resulting from a merge.
 :::
+
+## Merge conflicts
+
+![](media/git-merge-conflict.svg){width="60%"}
+
+## Avoiding merge conflicts
+
+Conflicts take time and energy to solve, so how can we avoid them?
+
+::: {.incremental}
+- Pull from upstream more frequently, especially before starting new
+  work.
+- Make smaller, isolated commits that touch as few files as possible.
+- Push your work when it is done and encourage your team to do the
+  same to reduce work in progress and, by extension, the chance of
+  having conflicts.
+- When appropriate, break large files into smaller ones so that it is
+  less likely that two authors will alter the same file
+  simultaneously.
+:::
+
+. . .
+
+or from a project management perspective:
+
+::: {.incremental}
+- Clarify who is responsible for what areas with your collaborators.
+- Discuss what order tasks should be carried out in with your
+  collaborators so that tasks expected to change the same lines won’t
+  be worked on simultaneously.
+- If conflicts are things like tabs versus spaces, look at automated
+  tools for fixing them.
+:::
+
+## Exercise: Solving conflicts you create
+
+1. Clone the repository created by me.
+2. Add a new file to it, and modify an existing file.
+    - I will tell you which one.
+3. Pull my changes from the repository to create a conflict, then
+   resolve it.
 
 ## Key points
 
 ::: {.incremental}
+- Conflicts occur when two or more people change the same lines of the
+  same file.
+- The version control system does not allow people to overwrite each
+  other’s changes blindly, but highlights conflicts so that they can
+  be resolved.
 :::
 
 # Open Science
