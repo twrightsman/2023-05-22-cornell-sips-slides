@@ -283,11 +283,74 @@ $ git diff me.txt
 ## Objectives
 
 ::: {.incremental}
+- Explain what the HEAD of a repository is and how to use it.
+- Identify and use Git commit identifiers.
+- Compare various versions of tracked files.
+- Restore old versions of files.
 :::
+
+## Visualizing HEAD
+
+![](media/git-checkout.svg){width="70%"}
+
+## Visual summary of git
+
+![](media/git_staging.svg){width="65%"}
+
+## Discussion: Recovering older versions of a file
+
+Jennifer has made changes to the Python script that she has been
+working on for weeks, and the modifications she made this morning
+“broke” the script and it no longer runs. She has spent ~ 1hr trying
+to fix it, with no luck…
+
+Luckily, she has been keeping track of her project’s versions using
+Git! Which commands below will let her recover the last committed
+version of her Python script called `data_cruncher.py`?
+
+1. `git checkout HEAD`
+2. `git checkout HEAD data_cruncher.py`
+3. `git checkout HEAD~1 data_cruncher.py`
+4. `git checkout <unique ID of last commit> data_cruncher.py`
+5. Both 2 and 4
+
+## Discussion: Understanding workflow and history
+
+What is the output of the last command?
+
+```
+$ cd planets
+$ echo "Venus is beautiful and full of love" > venus.txt
+$ git add venus.txt
+$ echo "Venus is too hot to be suitable as a base" >> venus.txt
+$ git commit -m "Comment on Venus as an unsuitable base"
+$ git checkout HEAD venus.txt
+$ cat venus.txt
+```
+
+1. `Venus is too hot to be suitable as a base`
+2. `Venus is beautiful and full of love`
+3. ```
+   Venus is beautiful and full of love
+   Venus is too hot to be suitable as a base
+   ```
+4. Error because you have changed `venus.txt` without committing the changes
+
+## Discussion: `git diff`
+
+Consider this command: `git diff HEAD~9 mars.txt`. What do you predict
+this command will do if you execute it? What happens when you do
+execute it? Why?
+
+Try another command, `git diff [ID] mars.txt`, where `[ID]` is
+replaced with the unique identifier for your most recent commit. What
+do you think will happen, and what does happen?
 
 ## Key points
 
 ::: {.incremental}
+- `git diff` displays differences between commits.
+- `git checkout` recovers old versions of files.
 :::
 
 # Ignoring Things
