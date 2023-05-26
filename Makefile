@@ -4,10 +4,17 @@ decks = site/introduction.html \
         site/bioinformatics-supplementary.html \
         site/git-novice.html
 
+all: index slides
+
+index: slides site/index.html
+
 slides: $(decks)
 
 clean:
 	rm --force site/*.html
+
+site/index.html:
+	python3 src/create-index.py site/ > site/index.html
 
 site/%.html: src/%.md
 	pandoc \
