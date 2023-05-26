@@ -696,11 +696,14 @@ Acts as a shareable electronic lab notebook for computational work.
 ## Objectives
 
 ::: {.incremental}
+- Make your work easy to cite.
 :::
 
 ## Key points
 
 ::: {.incremental}
+- Add a `CITATION` file to a repository to explain how you want your
+  work cited.
 :::
 
 # Hosting
