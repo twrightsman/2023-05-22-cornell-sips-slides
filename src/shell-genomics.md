@@ -203,6 +203,29 @@ $ ls shell_data/untrimmed_fastq/
 SRR097977.fastq  SRR098026.fastq
 ```
 
+## Paths: relative vs. absolute
+
+::: {.incremental}
+- Relative paths give directions to files/directories _relative_ to your current working directory.
+  - _e.g._ How to exit Mann if we are working in Stone Classroom
+  - `shell_data/`, `untrimmed_fastq/`, `shell_data/untrimmed_fastq/SRR097977.fastq`
+- Absolute paths give directions to files/directories that work _regardless_ of your current working directory.
+  - _e.g_ The GPS coordinates of the Mann library exists.
+  - Begin with a `/`, which is the "root directory".
+  - `/home/jupyter-student01/shell_data`, `/usr/bin`
+  - `pwd` prints an absolute path
+:::
+
+## Paths: `.` and `..`
+
+```
+$ ls -a
+.  ..  SRR097977.fastq  SRR098026.fastq
+```
+
+- `.` is a shortcut to the containing directory.
+- `..` is a shortcut to the parent directory of the containing directory.
+
 ## Exercise: Relative Path Resolution
 
 Using the filesystem diagram below, if pwd displays `/Users/thing`, what will `ls ../backup` display?
