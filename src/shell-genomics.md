@@ -49,6 +49,9 @@ https://twrightsman.github.io/shell-genomics
 A program that lets you control your computer using commands entered
 with a keyboard.
 
+It accepts command "sentences" (lines), which can be broken down into
+"words" (some are arguments/parameters) separated by spaces.
+
 ::: {.notes}
 - as opposed to a GUI which you control with keyboard + mouse +
   touchscreen
