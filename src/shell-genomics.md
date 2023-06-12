@@ -379,7 +379,6 @@ $ ls -l backup
 - Employ the `grep` command to search for information within files.
 - Print the results of a command to a file.
 - Construct command pipelines with two or more stages.
-- Use `for` loops to run the same command for several input files.
 :::
 
 ## Exercise
@@ -431,30 +430,44 @@ $ grep NNN SRR098026.fastq > bad_reads.txt
 $ wc -l bad_reads.txt
 ```
 
-## Exercise
+## Variables
 
-Print the file prefix of all of the `.txt` files in our current directory.
+The shell lets you store and retrieve values in named variables.
+
+```
+$ foo=bar
+$ echo $foo
+bar
+```
+
+## Quoting
+
+Single quotes prevent special characters from being interpreted by the shell.
+
+```
+$ foo=bar
+$ echo '$foo'
+$foo
+```
 
 . . .
 
-```
-$ for filename in *.txt
-> do
-> name=$(basename ${filename} .txt)
-> echo ${name}
-> done
-```
-
-## Exercise
-
-Remove `_2019` from all of the `.txt` files.
+Double quotes allow some characters to be interpreted by the shell,
+while ignoring most others (like space!).
 
 ```
-$ for filename in *_2019.txt
-> do
-> name=$(basename ${filename} _2019.txt)
-> mv ${filename} ${name}.txt
-> done
+$ ls
+'poor name.txt'
+$ myfile='poor name'
+$ ls $myfile.txt
+ls: cannot access 'poor': No such file or directory
+ls: cannot access 'name.txt': No such file or directory
+$ ls 'poor name.txt'
+'poor name.txt'
+$ ls '$myfile.txt'
+ls: cannot access '$myfile.txt': No such file or directory
+$ ls "$myfile.txt"
+'poor name.txt'
 ```
 
 ## Key points
@@ -465,8 +478,8 @@ $ for filename in *_2019.txt
 - `command > file` redirects a command’s output to a file.
 - `command >> file` redirects a command’s output to a file without overwriting the existing contents of the file.
 - `command_1 | command_2` redirects the output of the first command as input to the second command.
-- `for` loops are used for iteration.
-- `basename` gets rid of repetitive parts of names.
+- Variables can be used to store and recall values.
+- Using quotes in your command line can make sure your text isn't interpreted by the shell.
 :::
 
 # Writing Scripts and Working with Data
