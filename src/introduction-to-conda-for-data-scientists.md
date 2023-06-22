@@ -486,9 +486,9 @@ models specific to computer vision).
 
 Create a new directory called `my-computer-vision-project` and then
 create a Python 3.6 environment in a sub-directory called `env/` with
-the two packages listed above. Also include the most recent version of
-`jupyterlab` in your environment (so you have a nice UI) and
-`matplotlib` (so you can make plots).
+PyTorch 1.5 and torchvision 0.6. Also include `jupyterlab` 1.0 in your
+environment (so you have a nice UI) and `matplotlib` 3.1 (so you can
+make plots).
 
 . . .
 
@@ -498,8 +498,8 @@ $ cd my-computer-vision-project/
 $ conda create --prefix ./env --channel pytorch \
   python=3.6 \
   jupyterlab=1.0 \
-  pytorch=1.1 \
-  torchvision=0.3 \
+  pytorch=1.5 \
+  torchvision=0.6 \
   matplotlib=3.1
 ```
 
